@@ -1,4 +1,4 @@
-import {useRef, useState} from 'react';
+import {useRef} from 'react';
 import {
   Animated,
   StyleSheet,
@@ -35,7 +35,7 @@ export const SoundButton = ({name, onPress}: SoundButtonInterface) => {
   };
 
   return (
-    <View>
+    <View className="flex flex-col items-center mb-4">
       <TouchableWithoutFeedback
         onPressIn={handlePressIn}
         onPressOut={handlePressOut}
@@ -51,7 +51,7 @@ export const SoundButton = ({name, onPress}: SoundButtonInterface) => {
           />
         </Animated.View>
       </TouchableWithoutFeedback>
-      <Text style={styles.title}>{name}</Text>
+      <Text className="font-bold text-md">{name}</Text>
     </View>
   );
 };
@@ -75,12 +75,5 @@ const styles = StyleSheet.create({
     width: 110,
     height: 100,
     borderRadius: 50,
-  },
-  title: {
-    textAlign: 'center',
-    color: '#000',
-    fontSize: 16,
-    fontWeight: 'bold',
-    marginBottom: 10,
   },
 });

@@ -1,6 +1,6 @@
 import {StyleSheet, View} from 'react-native';
 import {Text} from 'react-native-paper';
-import {IonIcon} from '../components';
+import {IonIcon} from '../components/index';
 
 export const FavoritesScreen = () => {
   return (
