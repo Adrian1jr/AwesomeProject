@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {View} from 'react-native';
+import {ScrollView, View} from 'react-native';
 import Sound from 'react-native-sound';
 import {SoundButton} from '../components/index';
 import {Text} from 'react-native-paper';
@@ -72,15 +72,17 @@ export const HomeScreen = () => {
   return (
     <>
       <Text className="m-8 text-4xl font-bold text-center">Sound Buttons</Text>
-      <View className="flex flex-row flex-wrap justify-center">
-        {soundFiles.map((item, index) => (
-          <SoundButton
-            key={index}
-            name={item.name}
-            onPress={() => playSound(item.file)}
-          />
-        ))}
-      </View>
+      <ScrollView>
+        <View className="flex flex-row flex-wrap justify-center">
+          {soundFiles.map((item, index) => (
+            <SoundButton
+              key={index}
+              name={item.name}
+              onPress={() => playSound(item.file)}
+            />
+          ))}
+        </View>
+      </ScrollView>
     </>
   );
 };
